@@ -9,8 +9,8 @@ Easily track and visualize your monthly expenses from your [VGCollect](https://v
 - Matplotlib: ```python -mpip install -U matplotlib```
 - Tkinter: ```apt-get install python3-tk```
 
-## Run
-Download your collection in CSV format:
+## Usage
+Download your collection in CSV format:    
 *Go to VGCollect website > Setttings > Export Data > Collection*
 With the CSV file and the python code in the same directory run:
 ```python main.py```
