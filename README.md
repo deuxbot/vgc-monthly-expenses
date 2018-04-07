@@ -11,8 +11,8 @@ Easily track and visualize your monthly expenses from your [VGCollect](https://v
 
 ## Usage
 Download your collection in CSV format:    
-*Go to VGCollect website > Setttings > Export Data > Collection*
-With the CSV file and the python code in the same directory run:
+*Go to VGCollect website > Setttings > Export Data > Collection*  
+With the CSV file and the python code in the same directory run:  
 ```python main.py```
-If the CSV file is in other directory run:
+If the CSV file is in other directory run:  
 ```python main.py pathToCSV```
