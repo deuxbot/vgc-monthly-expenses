@@ -26,14 +26,18 @@ def get_axis(rows):
     costs = list()
     prev_month = None
     for row in rows:
+        price = float(row[8])
+        if price == 0:
+            print('Warning: Missing price in: %s' % row)
+            continue
         try:
             date = datetime.strptime(row[9], '%Y-%m-%d')
         except ValueError:
             try:
                 date = datetime.strptime(row[9], '%Y-%m-00')  # Day missing
-            except:
-                print('Error on row: %s' % row)
-        price = float(row[8])
+            except ValueError:
+                print('Warning: Missing purchase date in: %s' % row)
+                continue
         month = date.month
         if not prev_month:
             dates.append(date.strftime('%Y-%b'))
