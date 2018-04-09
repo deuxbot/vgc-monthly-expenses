@@ -26,7 +26,7 @@ def get_axis(rows):
     costs = list()
     prev_month = None
     for row in rows:
-        price = float(row[8])
+        price = float(row[8].replace(",","."))
         if price == 0:
             print('Warning: Missing price in: %s' % row)
             continue
