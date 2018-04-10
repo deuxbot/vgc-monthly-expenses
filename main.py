@@ -24,11 +24,18 @@ def read_csv(file_path):
 def get_axis(rows):
     dates = list()
     costs = list()
+    num_ignored = 0
     prev_month = None
     for row in rows:
-        price = float(row[8].replace(",","."))
+        try:
+            price = float(row[8].replace(",","."))
+        except ValueError:
+            print('Warning: Cannot read price in: %s' % row)
+            num_ignored += 1
+            continue
         if price == 0:
             print('Warning: Missing price in: %s' % row)
+            num_ignored += 1
             continue
         try:
             date = datetime.strptime(row[9], '%Y-%m-%d')
@@ -37,6 +44,7 @@ def get_axis(rows):
                 date = datetime.strptime(row[9], '%Y-%m-00')  # Day missing
             except ValueError:
                 print('Warning: Missing purchase date in: %s' % row)
+                num_ignored += 1
                 continue
         month = date.month
         if not prev_month:
@@ -49,6 +57,8 @@ def get_axis(rows):
                 dates.append(date.strftime('%Y-%b'))
                 costs.append(price)
         prev_month = month
+    if num_ignored > 0:
+         print('Ignored games %d of %d' % (num_ignored, len(row)))
     return dates, costs
 
 
