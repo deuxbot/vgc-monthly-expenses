@@ -2,7 +2,8 @@ language: python
 python:
   - "3.5"
 before_install:
- - sudo apt-get install python3-tk
+ - apt-get install python3-pip
+ - apt-get install python3-tk
 cache: pip
 install:
   - python3 -mpip install -U matplotlib
