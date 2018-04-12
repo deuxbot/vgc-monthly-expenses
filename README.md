@@ -1,4 +1,4 @@
-# vgcollect-monthly-expenses
+# vgc-monthly-expenses
 [![Build Status](https://travis-ci.org/deuxbot/vgcollect-monthly-expenses.svg?branch=master)](https://travis-ci.org/deuxbot/vgcollect-monthly-expenses)
 ## Description
 Easily track and visualize your monthly expenses from your [VGCollect](https://vgcollect.com) data.
