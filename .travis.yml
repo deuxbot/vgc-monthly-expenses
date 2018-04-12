@@ -7,4 +7,4 @@ cache: pip
 install:
   - python3 -mpip install -U matplotlib
 script:
-  - python main.py
+  - python3 main.py
