@@ -58,7 +58,7 @@ def get_axis(rows):
                 costs.append(price)
         prev_month = month
     if num_ignored > 0:
-         print('Ignored games %d of %d' % (num_ignored, len(row)))
+         print('Ignored games %d of %d' % (num_ignored, len(rows)))
     return dates, costs
 
 
